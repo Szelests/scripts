@@ -82,7 +82,6 @@ class AppGUI:
         self.solve_button = ttk.Button(control_frame, text="Resolver e Plotar", command=self.resolver_e_plotar)
         self.solve_button.pack(side=tk.LEFT, padx=10)
 
-        # MODIFICAÇÃO: Criar uma figura com uma grade 2x2 de subplots
         self.figura, self.axes = plt.subplots(nrows=2, ncols=2, figsize=(12, 8), dpi=100)
         
         self.canvas = FigureCanvasTkAgg(self.figura, master=main_frame)
@@ -111,7 +110,7 @@ class AppGUI:
         plot_configs = {'linewidth': 2}
         approx_configs = {'marker': 'o', 'linestyle': '--', 'markersize': 5, 'alpha': 0.8}
 
-        # --- Plotagem no Subplot 1 (Superior Esquerdo): APENAS Solução Exata ---
+        # --- Plotagem no Subplot 1 (Superior Esquerdo): Solução Exata ---
         ax1 = self.axes[0, 0]
         ax1.plot(t_exato, y_exato, 'k-', label='Solução Exata', **plot_configs)
         ax1.set_title("Solução Exata")

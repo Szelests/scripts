@@ -21,7 +21,6 @@ class ProblemaValorInicial:
         self.descricao = descricao
 
 # CLASSE PARA IMPLEMENTAR OS MÉTODOS NUMÉRICOS
-# (Esta classe não precisa de alterações)
 class ResolvedorNumerico:
     """
     Contém implementações de métodos numéricos para resolver PVIs.
@@ -46,7 +45,6 @@ class ResolvedorNumerico:
         return t_vals, y_vals
 
 # CLASSE PARA A INTERFACE GRÁFICA (GUI)
-# (Esta classe foi significativamente modificada para usar subplots)
 class AppGUI:
     """
     Cria e gerencia a interface gráfica para resolver e visualizar os PVIs.
@@ -80,7 +78,6 @@ class AppGUI:
         self.solve_button = ttk.Button(control_frame, text="Resolver e Plotar", command=self.resolver_e_plotar)
         self.solve_button.pack(side=tk.LEFT, padx=10)
 
-        # MODIFICAÇÃO: Criar uma figura com uma grade 2x2 de subplots
         self.figura, self.axes = plt.subplots(nrows=2, ncols=2, figsize=(12, 8), dpi=100)
         
         self.canvas = FigureCanvasTkAgg(self.figura, master=main_frame)
@@ -157,7 +154,7 @@ class AppGUI:
 
 # PONTO DE ENTRADA DO SCRIPT
 if __name__ == "__main__":
-    # Lista dos PVIs originais (exercício 1) com intervalo [0, 0.5]
+    # Lista dos PVIs originais 
     lista_de_problemas = [
         ProblemaValorInicial(
             f=lambda t, y: 3 + t - y, y0=1, t0=0, t_final=0.5,
